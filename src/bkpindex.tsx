@@ -1,24 +1,17 @@
 import React from 'react';
 import './index.css';
-import ChatBotTabs from './components/chat-component/chatbot-tabs';
-import ScriptTabContent from './components/chat-component/script-tab-content';
-interface ChatComponentProps {
+import ScriptTabContent from './components/chatbot-component/script-tab-content';
+import ChatBotTabs from './components/chatbot-component/chatbot-tabs';
+interface ChatBotProps {
   closeChatBot: () => void;
-  screenshotData: string;
-  firstnameData: string;
 }
 
-export const ChatComponent: React.FC<ChatComponentProps> = ({ closeChatBot, screenshotData, firstnameData }) => {
+export const ChatComponent: React.FC<ChatBotProps> = ({ closeChatBot }) => {
   const tabs = [
-    {
-      id: 'tab1',
-      label: 'Script',
-      content: <ScriptTabContent screenshotData={screenshotData} firstnameData={firstnameData} />,
-    },
+    { id: 'tab1', label: 'Script', content: <ScriptTabContent /> },
     { id: 'tab2', label: 'Help', content: <div>Help</div> },
     { id: 'tab3', label: 'Transcript', content: <div>Transcript</div> },
   ];
-
   return (
     <div className="rounded-t-xl flex flex-col bg-[#7EDEF1] w-80 min-h-[520px] fixed bottom-0 right-10">
       {/* window header */}
