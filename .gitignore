@@ -1,7 +1,8 @@
 # production
-/dist
+dist
 
 # misc
 .DS_Store
 npm-debug.log*
 node_modules
+.rollup.cache
